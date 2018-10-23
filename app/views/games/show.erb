@@ -37,7 +37,9 @@
   <hr>
 
   <p>Picture of Product</p>
+  <%= image_tag @round.items.first.img_url%>
   <p>Name of Product</p>
+  <%= @round.items.first.name %>
 
   <hr>
 
@@ -54,7 +56,7 @@
           <%= f.hidden_field :player_id, :value => player.id %>
           <%= f.hidden_field :round_id, :value => @game.rounds.last.id %>
 
-          <%= f.label "Guess Ammount" %>
+          <%= f.label "Guess Amount" %>
           <%= f.number_field :guess_ammount %>
 
           <%= f.submit %>
