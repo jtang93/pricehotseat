@@ -9,8 +9,25 @@
   </p>
 <% end %>
 
-<h3>The Item Price Was [Item Price Here]</h3>
+<h3>The Item Price Was <%=@round.items.first.price%></h3>
 
 <br>
+<% winner = nil %>
+<% @round.players.each do |player| %>
+  <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.items.first.price %>
+    <% if !!winner %>
+      <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount > winner.choices.find{|c| c.round_id == @round.id}.guess_ammount %>
+        <% winner = player %>
+      <% end %>
+    <% else %>
+      <% winner = player %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>Winner: <%= winner.name %></h1>
+
+<br>
+
 
 <%= button_to "Next Round", rounds_path({game_id: @round.game_id}) %>

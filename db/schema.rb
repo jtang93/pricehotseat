@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_210324) do
+ActiveRecord::Schema.define(version: 2018_10_23_152826) do
 
   create_table "choices", force: :cascade do |t|
     t.integer "round_id"
@@ -44,10 +44,16 @@ ActiveRecord::Schema.define(version: 2018_10_22_210324) do
     t.string "room_code"
   end
 
+  create_table "round_items", force: :cascade do |t|
+    t.integer "round_id"
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rounds", force: :cascade do |t|
     t.integer "game_id"
     t.integer "choice_id"
-    t.integer "item_id"
   end
 
 end

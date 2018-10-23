@@ -6,12 +6,14 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    if flash[:round_id]
-      @round = Round.find(flash[:round_id])
-    else
-      @round = @game.rounds.last
-      @player = Player.new
-    end
+    @round = @game.rounds.last
+    @player = Player.new
+    # if flash[:round_id]
+    #   @round = Round.find(flash[:round_id])
+    # else
+    #   @round = @game.rounds.last
+    #   @player = Player.new
+    # end
   end
 
   def new
@@ -33,7 +35,7 @@ class GamesController < ApplicationController
   def destroy
     # byebug
     @game = Game.find(params[:id])
-    @game.delete
+    @game.destroy
     redirect_to games_path
   end
 
