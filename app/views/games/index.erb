@@ -1,0 +1,11 @@
+<h1>All Games</h1>
+
+<% @games.each do |game| %>
+  <hr>
+  <%= link_to "#{game.name} | #{game.room_code}", game %><br></br>
+  <%= button_to "delete", game_path(game), method: :delete %>
+<% end %>
+
+<hr>
+
+<%= button_to "New Game", new_game_path, method: :get %>

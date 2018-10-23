@@ -1,0 +1,74 @@
+<h1><%= @game.name %></h1>
+<h2>Room Code: <%= @game.room_code %></h2>
+
+<% if !@game.started %>
+
+  <hr>
+
+  <h3>Players:</h3>
+  <% @game.players.each do |player| %>
+    <p><%= player.name %></p>
+  <% end %>
+
+  <hr>
+
+  <h3>Add New Player:</h3>
+  <%= form_for @player do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+
+    <% @player.room_code = @game.room_code %>
+    <%= f.label :room_code %><br>
+    <%= f.text_field :room_code %><br>
+
+    <%= f.submit %>
+  <% end %>
+
+  <hr>
+
+  <%= button_to "Start Game", rounds_path({game_id: @game.id}) %>
+
+<% else %>
+
+  <hr>
+
+  <h3>Round <%= @game.rounds.size %></h3>
+
+  <hr>
+
+  <p>Picture of Product</p>
+  <p>Name of Product</p>
+
+  <hr>
+
+  <% @game.players.each do |player| %>
+    <div>
+      <h4> <%= player.name %> </h4>
+      <% if player.choices.find {|c| c.round_id == @round.id} %>
+        <% c = player.choices.find {|c| c.round_id == @round.id} %>
+        <p>Guess Ammount: <%= c.guess_ammount %> </p>
+      <% else %>
+
+        <% choice = Choice.new %>
+        <%= form_for choice do |f| %>
+          <%= f.hidden_field :player_id, :value => player.id %>
+          <%= f.hidden_field :round_id, :value => @game.rounds.last.id %>
+
+          <%= f.label "Guess Ammount" %>
+          <%= f.number_field :guess_ammount %>
+
+          <%= f.submit %>
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+
+  <% end %>
+
+
+  <%= button_to "Show Results", round_path(id: @round.id) %>
+
+
+<% end %>

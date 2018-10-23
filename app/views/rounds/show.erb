@@ -1,0 +1,16 @@
+<h1>Round <%= @round.game.rounds.size %> Results</h1>
+
+<h2>Players:</h2>
+<% @round.players.each do |player| %>
+  <p>
+  <%= player.name %><br>
+  <% c = player.choices.find{|c| c.round_id == @round.id} %>
+  Amt: <%= c.guess_ammount %>
+  </p>
+<% end %>
+
+<h3>The Item Price Was [Item Price Here]</h3>
+
+<br>
+
+<%= button_to "Next Round", rounds_path({game_id: @round.game_id}) %>
