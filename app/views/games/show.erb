@@ -66,11 +66,11 @@
 
     </div>
 
-
   <% end %>
 
-
-  <%= button_to "Show Results", round_path(id: @round.id) %>
+  <% if @game.players.map{|player| player.choices.find{|choice| choice.round_id == @round.id}}.select{|choice| !choice.nil?}.size == @game.players.size %>
+    <%= button_to "Show Results", round_path(id: @round.id) %>
+  <% end %>
 
 
 <% end %>
