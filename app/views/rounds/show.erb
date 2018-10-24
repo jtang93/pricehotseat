@@ -9,12 +9,12 @@
   </p>
 <% end %>
 
-<h3>The Item Price Was <%=@round.items.first.price%></h3>
+<h3>The Item Price Was <%=@round.item.price%></h3>
 
 <br>
 <% winner = nil %>
 <% @round.players.each do |player| %>
-  <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.items.first.price %>
+  <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.item.price %>
     <% if !!winner %>
       <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount > winner.choices.find{|c| c.round_id == @round.id}.guess_ammount %>
         <% winner = player.name %>
