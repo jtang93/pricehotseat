@@ -16,6 +16,10 @@ class GamesController < ApplicationController
     # end
   end
 
+  def final
+    render 'final'
+  end
+
   def new
     @game = Game.new
   end
@@ -35,14 +39,14 @@ class GamesController < ApplicationController
   def destroy
     # byebug
     @game = Game.find(params[:id])
-    @game.destroy
+    @game.destroy # TODO Not Destroying Everything :/
     redirect_to games_path
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:name)
+    params.require(:game).permit(:name,:num_rounds)
   end
 
 end
