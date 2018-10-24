@@ -13421,3 +13421,2798 @@ Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
 
 
 >>>>>>> e1bf0fd07535983f619b6515723f36fe0e368b52
+Started GET "/games" for 127.0.0.1 at 2018-10-24 17:25:18 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddNumRoundsToGame (20181024203250)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "games" ADD "num_rounds" integer[0m
+  ↳ db/migrate/20181024203250_add_num_rounds_to_game.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181024203250"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/games" for 127.0.0.1 at 2018-10-24 17:25:48 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (18.5ms)
+Completed 200 OK in 498ms (Views: 469.8ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/games/3" for 127.0.0.1 at 2018-10-24 17:25:51 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mwFcUfoRT/rf8+4YDKCnUhVU+qoZ86e1EKM5YC3ew2EGkrBfPadPqRXQPzSkiSYOHdnWa1vcLTmGyN8dvsOVTw==", "id"=>"3"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 3]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.7ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.1ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 18]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Load (1.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 3]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mGame Destroy (0.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+Redirected to http://localhost:3000/games
+Completed 302 Found in 98ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 17:25:51 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/games/2" for 127.0.0.1 at 2018-10-24 17:25:52 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uNC/64da3lczpvqZFtI3iKajPF+iDVN2FkX2GklqrYMlQ1PlQOzeBPmFK7W++7bUri4QnuAi2fqALhBn2nf7rQ==", "id"=>"2"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (1.1ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.4ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+Redirected to http://localhost:3000/games
+Completed 302 Found in 28ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 17:25:52 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 60ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/games/1" for 127.0.0.1 at 2018-10-24 17:25:53 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kh5uA2xIy9lQms58mqz+ZuaGofYF+67j9C8QrHp5HkgPjYINq/7Lipq5H1AyhX867guNN0fUJG9iRPbR6WRIZg==", "id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.6ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.4ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+Redirected to http://localhost:3000/games
+Completed 302 Found in 27ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 17:25:53 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 17:25:54 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (24.4ms)
+Completed 200 OK in 66ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-10-24 17:26:00 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qb1EQ7P1Xqxu9WpMFlyiswKYAR/QGzyR3KvmHUyECZo0LqhNdENe/6TWu2C+dSPvChUt3pI0th1KwABg35lftA==", "game"=>{"name"=>"g1", "num_rounds"=>"3"}, "commit"=>"Create Game"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:28
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("name", "created_at", "updated_at", "num_rounds") VALUES (?, ?, ?, ?)[0m  [["name", "g1"], ["created_at", "2018-10-24 21:26:00.245750"], ["updated_at", "2018-10-24 21:26:00.245750"], ["num_rounds", 3]]
+  ↳ app/controllers/games_controller.rb:28
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:31
+  [1m[36mGame Update (1.0ms)[0m  [1m[33mUPDATE "games" SET "room_code" = ?, "updated_at" = ?, "started" = ? WHERE "games"."id" = ?[0m  [["room_code", "WRRN"], ["updated_at", "2018-10-24 21:26:00.254423"], ["started", 0], ["id", 1]]
+  ↳ app/controllers/games_controller.rb:31
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:31
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 32ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:00 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (4.9ms)
+Completed 200 OK in 54ms (Views: 42.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2018-10-24 17:26:04 -0400
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y7+sEteO2uh98TWndy9Hnb+2w1lLtlhJqluCzkjkXB7+LEAcEDjau7fS5IvfBsbBtzvvmAmZ0sU8MGSz2/kKMA==", "player"=>{"name"=>"JT", "room_code"=>"WRRN"}, "commit"=>"Create Player"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."room_code" = ? LIMIT ?[0m  [["room_code", "WRRN"], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mPlayer Create (1.5ms)[0m  [1m[32mINSERT INTO "players" ("name", "game_id", "created_at", "updated_at", "room_code") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JT"], ["game_id", 1], ["created_at", "2018-10-24 21:26:04.051634"], ["updated_at", "2018-10-24 21:26:04.051634"], ["room_code", "WRRN"]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:04 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (5.3ms)
+Completed 200 OK in 42ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2018-10-24 17:26:06 -0400
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NyWmtOYiiB5DRyZsGdKLQTq4rR3KE1f49dJZLhOqUuKqtkq6IZSITYlk90Cx+wodMjWB3Ig83XRjub9TgLcEzA==", "player"=>{"name"=>"Max", "room_code"=>"WRRN"}, "commit"=>"Create Player"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."room_code" = ? LIMIT ?[0m  [["room_code", "WRRN"], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mPlayer Create (0.5ms)[0m  [1m[32mINSERT INTO "players" ("name", "game_id", "created_at", "updated_at", "room_code") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Max"], ["game_id", 1], ["created_at", "2018-10-24 21:26:06.385153"], ["updated_at", "2018-10-24 21:26:06.385153"], ["room_code", "WRRN"]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:06 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (4.7ms)
+Completed 200 OK in 40ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rounds?game_id=1" for 127.0.0.1 at 2018-10-24 17:26:08 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"cc/9+Z5GGHWoxvhIRma3suyCDwLaWJdJMw2tdoleiEvsXBH3WfAYJmLlKWTuTzbu5A8jw5h3HcWlZksLGkPeZQ==", "game_id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mRound Create (0.4ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 1]]
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mRoundItem Create (1.8ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 1], ["item_id", 8], ["created_at", "2018-10-24 21:26:08.265238"], ["updated_at", "2018-10-24 21:26:08.265238"]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:26
+  [1m[36mGame Update (0.5ms)[0m  [1m[33mUPDATE "games" SET "started" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["started", 1], ["updated_at", "2018-10-24 21:26:08.272465"], ["id", 1]]
+  ↳ app/controllers/rounds_controller.rb:26
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:26
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 54ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:08 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (1.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (42.6ms)
+Completed 200 OK in 91ms (Views: 82.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 17:26:15 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"24j5tFzxob+jQmeHGhWINsx5BidgE4pzWQv+TpMCqRRGGxW6m0eh7GlhtquyPAlqxPQq5iI8AP/PYBgzAB//Og==", "choice"=>{"player_id"=>"19", "round_id"=>"1", "guess_ammount"=>"234234"}, "commit"=>"Create Choice"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (6.1ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 1], ["player_id", 19], ["guess_ammount", 234234]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (21.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 55ms (ActiveRecord: 28.8ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:15 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (27.1ms)
+Completed 200 OK in 78ms (Views: 68.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 17:26:20 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OINGNasdGRUjP5oFexmweE1gXoFaTr7FPX4/gOtoL7mlEKo7bKsZRukcSynTMDEkRe1yQBhhNEmrFdn9eHV5lw==", "choice"=>{"player_id"=>"20", "round_id"=>"1", "guess_ammount"=>"15125"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.7ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 1], ["player_id", 20], ["guess_ammount", 15125]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 16ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:20 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  Rendered games/show.erb within layouts/application (10.1ms)
+Completed 200 OK in 49ms (Views: 41.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/round?id=1" for 127.0.0.1 at 2018-10-24 17:26:21 -0400
+Processing by RoundsController#show as HTML
+  Parameters: {"authenticity_token"=>"9rDZAtA5z2Ks3KXAuLfw99F/jyAByNcEtFK3UVpH4/ZrIzUMF4/PMWb/dOwQnnGr2fKj4UPnXYgiOVEsyVq12A==", "id"=>"1"}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:5
+  Rendering rounds/show.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" INNER JOIN "choices" ON "players"."id" = "choices"."player_id" WHERE "choices"."round_id" = ?[0m  [["round_id", 1]]
+  ↳ app/views/rounds/show.erb:4
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 1], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:12
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/rounds/show.erb:32
+  Rendered rounds/show.erb within layouts/application (18.5ms)
+Completed 200 OK in 23070ms (Views: 77.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/rounds?game_id=1" for 127.0.0.1 at 2018-10-24 17:26:51 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"NPIyRg582Rmw5N1NNY04cs7YaAxi322CR9wScKhzrKWpYd5IycrZSnrHDGGdpLkuxlVEzSDw5w7Rt/QNO276iw==", "game_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mRound Create (0.5ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 1]]
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mRoundItem Create (0.7ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 2], ["item_id", 7], ["created_at", "2018-10-24 21:26:51.402683"], ["updated_at", "2018-10-24 21:26:51.402683"]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:22
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 27ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:51 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (9.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (21.1ms)
+Completed 200 OK in 56ms (Views: 37.1ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 17:26:59 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cjwlXGUVyq7ACCL6I1VRdA/CkY/t3e2cqLFTumKqembvr8lSoqPK/Qor89aLfNAoB0+9Tq/yZxA+2rXH8bcsSA==", "choice"=>{"player_id"=>"19", "round_id"=>"2", "guess_ammount"=>"869869"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.8ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 2], ["player_id", 19], ["guess_ammount", 869869]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:26:59 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (13.7ms)
+Completed 200 OK in 47ms (Views: 38.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 17:27:01 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GxmYCIsqGYqEmEnm5uVfWL8P6s+YLY6FvXFkDIJTeP6GinQGTJwZ2U67mMpOzN4Et4LGDtoCBAkrGoJxEU4u0A==", "choice"=>{"player_id"=>"20", "round_id"=>"2", "guess_ammount"=>"123123123"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.5ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 2], ["player_id", 20], ["guess_ammount", 123123123]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 12ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:27:01 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  Rendered games/show.erb within layouts/application (9.6ms)
+Completed 200 OK in 47ms (Views: 38.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/round?id=2" for 127.0.0.1 at 2018-10-24 17:27:03 -0400
+Processing by RoundsController#show as HTML
+  Parameters: {"authenticity_token"=>"/7HPswCdOYo9CZmXlCJMHCGWDYd88vfQyQYtK0lMDbNiIiO9xys52fcqSLs8C81AKRshRj7dfVxfbctW2lFbnQ==", "id"=>"2"}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:5
+  Rendering rounds/show.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players" INNER JOIN "choices" ON "players"."id" = "choices"."player_id" WHERE "choices"."round_id" = ?[0m  [["round_id", 2]]
+  ↳ app/views/rounds/show.erb:4
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 2], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:12
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/rounds/show.erb:32
+  Rendered rounds/show.erb within layouts/application (10.5ms)
+Completed 200 OK in 6009ms (Views: 38.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/rounds?game_id=1" for 127.0.0.1 at 2018-10-24 17:27:14 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"Au6ocRgw2fAwDkJdU22ygVXbX/ybN3TLyvxerGAGl/6ffUR/34bZo/otk3H7RDPdXVZzPdkY/kdcl7jR8xvB0A==", "game_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mRound Create (0.4ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 1]]
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:15
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mRoundItem Create (1.0ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 3], ["item_id", 0], ["created_at", "2018-10-24 21:27:14.848018"], ["updated_at", "2018-10-24 21:27:14.848018"]]
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:19
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:22
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 22ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-10-24 17:27:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 19]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 20]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (13.1ms)
+Completed 200 OK in 45ms (Views: 37.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 17:58:23 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (20.4ms)
+Completed 200 OK in 447ms (Views: 415.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 17:59:12 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (31.8ms)
+Completed 200 OK in 92ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-10-24 18:01:21 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PpKkIhGzNh87XZS7Fj3LfAgowzmWR6C7tBjGPDLERJWjAUgs1gU2TPF+RZe+FEogAKXv+NRoKjcicyBBodkSuw==", "game"=>{"name"=>"g5", "num_rounds"=>"2"}, "commit"=>"Create Game"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:28
+  [1m[36mGame Create (2.4ms)[0m  [1m[32mINSERT INTO "games" ("name", "created_at", "updated_at", "num_rounds") VALUES (?, ?, ?, ?)[0m  [["name", "g5"], ["created_at", "2018-10-24 22:01:21.598067"], ["updated_at", "2018-10-24 22:01:21.598067"], ["num_rounds", 2]]
+  ↳ app/controllers/games_controller.rb:28
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:31
+  [1m[36mGame Update (0.5ms)[0m  [1m[33mUPDATE "games" SET "room_code" = ?, "updated_at" = ?, "started" = ? WHERE "games"."id" = ?[0m  [["room_code", "BLMY"], ["updated_at", "2018-10-24 22:01:21.607383"], ["started", 0], ["id", 2]]
+  ↳ app/controllers/games_controller.rb:31
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:31
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 25ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:01:21 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (1.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (8.5ms)
+Completed 200 OK in 216ms (Views: 81.1ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2018-10-24 18:01:24 -0400
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"otoQt8QXfSTZuDkg3Yl8l06mIIkcOMrwlW77rT446LA/Sfy5A6F9dxOb6Ax1oP3LRisMSF4XQHwDBR3QrSW+ng==", "player"=>{"name"=>"JT", "room_code"=>"BLMY"}, "commit"=>"Create Player"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."room_code" = ? LIMIT ?[0m  [["room_code", "BLMY"], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mPlayer Create (1.4ms)[0m  [1m[32mINSERT INTO "players" ("name", "game_id", "created_at", "updated_at", "room_code") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JT"], ["game_id", 2], ["created_at", "2018-10-24 22:01:25.009405"], ["updated_at", "2018-10-24 22:01:25.009405"], ["room_code", "BLMY"]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 21ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:01:25 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (4.9ms)
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2018-10-24 18:01:27 -0400
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tMmqQHLYNnNg3h2kITXtQ+ZxuL9DuBYazmXvTHa0QqgpWkZOtW42IKr9zIiJHGwf7vyUfgGXnJZYDgkx5akUhg==", "player"=>{"name"=>"Max", "room_code"=>"BLMY"}, "commit"=>"Create Player"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."room_code" = ? LIMIT ?[0m  [["room_code", "BLMY"], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mPlayer Create (0.9ms)[0m  [1m[32mINSERT INTO "players" ("name", "game_id", "created_at", "updated_at", "room_code") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Max"], ["game_id", 2], ["created_at", "2018-10-24 22:01:27.118345"], ["updated_at", "2018-10-24 22:01:27.118345"], ["room_code", "BLMY"]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 13ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:01:27 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/rounds?game_id=2" for 127.0.0.1 at 2018-10-24 18:01:38 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"eSD+fCIO3tJTz4tI4bzohYapBRWpACMgG6UwgpycNI3ksxJy5bjegZnsWmRJlWnZjiQp1OsvqayNztb/D4Fiow==", "game_id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mRound Create (2.0ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 2]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRoundItem Create (1.6ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 4], ["item_id", 11], ["created_at", "2018-10-24 22:01:38.236375"], ["updated_at", "2018-10-24 22:01:38.236375"]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:25
+  [1m[36mGame Update (0.4ms)[0m  [1m[33mUPDATE "games" SET "started" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["started", 1], ["updated_at", "2018-10-24 22:01:38.258111"], ["id", 2]]
+  ↳ app/controllers/rounds_controller.rb:25
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:25
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 143ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:01:38 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (1.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (54.6ms)
+Completed 200 OK in 87ms (Views: 77.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 18:02:14 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"koEZ0ESaf8F7iYxBICosFDGTM50ZOjJYTaMB0w6A5+YPEvXegyx/krGqXW2IA61IOR4fXFsVuNTbyOeunZ2xyA==", "choice"=>{"player_id"=>"21", "round_id"=>"4", "guess_ammount"=>"869869"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.4ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 4], ["player_id", 21], ["guess_ammount", 869869]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:02:14 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (8.1ms)
+Completed 200 OK in 79ms (Views: 71.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 18:02:18 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AxaSvXKri7/n7F7fVtMXJLGb3sH27/liFk51cQztwYmehX6ztR2L7C3Pj/P++pZ4uRbyALTAc+6AJZMMn/CXpw==", "choice"=>{"player_id"=>"22", "round_id"=>"4", "guess_ammount"=>"5642542"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.6ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 4], ["player_id", 22], ["guess_ammount", 5642542]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 15ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:02:18 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/games/show.erb:49
+  Rendered games/show.erb within layouts/application (7.4ms)
+Completed 200 OK in 44ms (Views: 34.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/round?id=4" for 127.0.0.1 at 2018-10-24 18:02:21 -0400
+Processing by RoundsController#show as HTML
+  Parameters: {"authenticity_token"=>"278nZokEquU+AL0HsnWnCk9EEVXGx7MwVtkLqUbppNRGLMtoTrKqtvQjbCsaXCZWR8k9lIToObzAsu3U1fTy+g==", "id"=>"4"}
+  [1m[36mRound Load (0.5ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:4
+  Rendering rounds/show.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" INNER JOIN "choices" ON "players"."id" = "choices"."player_id" WHERE "choices"."round_id" = ?[0m  [["round_id", 4]]
+  ↳ app/views/rounds/show.erb:4
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:12
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/rounds/show.erb:32
+  Rendered rounds/show.erb within layouts/application (16.2ms)
+Completed 200 OK in 51ms (Views: 44.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/rounds?game_id=2" for 127.0.0.1 at 2018-10-24 18:02:22 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"V1WbfvD1xEIzMlO4i+lYNbesKig8vz7zfF8fs+8KNd/KxndwN0PEEfkRgpQjwNlpvyEG6X6QtH/qNPnOfBdj8Q==", "game_id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mRound Create (0.6ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 2]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRoundItem Create (0.7ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 5], ["item_id", 5], ["created_at", "2018-10-24 22:02:22.785333"], ["updated_at", "2018-10-24 22:02:22.785333"]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:21
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 56ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:02:22 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 5], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (31.7ms)
+Completed 200 OK in 87ms (Views: 78.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 18:02:29 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dBD6sFQIRXcy108DOleqqC3h5pacPGEHSn9X0MSsTMnpgxa+k75FJPj0ni+Sfiv0JWzKV94T64vcFLGtV7Ea5w==", "choice"=>{"player_id"=>"21", "round_id"=>"5", "guess_ammount"=>"536536"}, "commit"=>"Create Choice"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (1.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.7ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 5], ["player_id", 21], ["guess_ammount", 536536]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 32ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:02:29 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 5], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (8.1ms)
+Completed 200 OK in 43ms (Views: 36.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 18:02:34 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qNyT6FXTvI0r4J1V+mo0alWk4nfqp5RxybH/4h8L6Yc1T3/mkmW83uHDTHlSQ7U2XSnOtqiIHv1f2hmfjBa/qQ==", "choice"=>{"player_id"=>"22", "round_id"=>"5", "guess_ammount"=>"5315"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.6ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 5], ["player_id", 22], ["guess_ammount", 5315]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 18ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 18:02:34 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 5], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/games/show.erb:49
+  Rendered games/show.erb within layouts/application (6.8ms)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/round?id=5" for 127.0.0.1 at 2018-10-24 18:02:36 -0400
+Processing by RoundsController#show as HTML
+  Parameters: {"authenticity_token"=>"9avHnjWoM/O400kXjsz/Rm3EYMYWPSgX3RIo593iy6RoOCuQ8h4zoHLwmDsm5X4aZUlMB1QSoptLec6aTv+dig==", "id"=>"5"}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:4
+  Rendering rounds/show.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" INNER JOIN "choices" ON "players"."id" = "choices"."player_id" WHERE "choices"."round_id" = ?[0m  [["round_id", 5]]
+  ↳ app/views/rounds/show.erb:4
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 21]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 22]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 5], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:12
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/rounds/show.erb:32
+  Rendered rounds/show.erb within layouts/application (11.2ms)
+Completed 200 OK in 48ms (Views: 39.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/game/2/final" for 127.0.0.1 at 2018-10-24 18:02:38 -0400
+Processing by GamesController#final as HTML
+  Parameters: {"authenticity_token"=>"gp/2nDO8ING8eiDk6oTDJEfwSAJ7EU5vBrbCebBLcZQfDBqS9AoggnZZ8chCrUJ4T31kwzk+xOOQ3SQEI1Ynug==", "id"=>"2"}
+  Rendering games/final.erb within layouts/application
+  Rendered games/final.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/round?id=5" for 127.0.0.1 at 2018-10-24 18:08:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/round"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/round?id=4" for 127.0.0.1 at 2018-10-24 18:08:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/round"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:08:27 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.5ms)
+Completed 200 OK in 93ms (Views: 86.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:14:32 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (14.7ms)
+Completed 200 OK in 120ms (Views: 107.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:14:34 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (5.6ms)
+Completed 200 OK in 72ms (Views: 63.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:28 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (10.8ms)
+Completed 200 OK in 106ms (Views: 95.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:30 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.2ms)
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:30 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.6ms)
+Completed 200 OK in 339ms (Views: 334.2ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:31 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.3ms)
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:31 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.2ms)
+Completed 200 OK in 522ms (Views: 512.6ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 753ms (Views: 748.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:35 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (8.8ms)
+Completed 200 OK in 99ms (Views: 93.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 18:15:38 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (4.9ms)
+Completed 200 OK in 53ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/style.css" for 127.0.0.1 at 2018-10-24 18:15:38 -0400
+Processing by GamesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=style):
+  
+app/controllers/games_controller.rb:8:in `show'
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:49 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (5.2ms)
+Completed 200 OK in 81ms (Views: 75.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:15:52 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.9ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:15:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:17:18 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.6ms)
+Completed 200 OK in 87ms (Views: 79.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:17:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:17:21 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:17:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:17:49 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 58.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:17:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:17:50 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:17:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:18:35 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.1ms)
+Completed 200 OK in 96ms (Views: 86.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:18:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:18:37 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.0ms)
+Completed 200 OK in 61ms (Views: 54.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:18:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:19:07 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 82ms (Views: 74.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:19:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:19:16 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.6ms)
+Completed 200 OK in 73ms (Views: 67.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:19:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:19:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:21:35 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (6.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (38.7ms)
+Completed 200 OK in 234ms (Views: 212.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:21:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:22:56 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 74.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:22:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:29:48 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (4.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (40.8ms)
+Completed 200 OK in 174ms (Views: 155.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/style.css" for 127.0.0.1 at 2018-10-24 18:29:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/style.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:30:46 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.4ms)
+Completed 200 OK in 82ms (Views: 75.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:30:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:33:12 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.3ms)
+Completed 200 OK in 109ms (Views: 102.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:33:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:34:25 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (20.0ms)
+Completed 200 OK in 381ms (Views: 356.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:34:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:34:26 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.6ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:34:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/games/2" for 127.0.0.1 at 2018-10-24 18:35:05 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MZlltCfyY33H7YFuIIJYFUD52R+XNiJZIsyJJ5H8ZCGsCom64ERjLg3OUEKIq9lJSHT13tUZqNW0p29aAuEyDw==", "id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.5ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.1ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 22]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Load (1.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mGame Destroy (0.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+Redirected to http://localhost:3000/games
+Completed 302 Found in 78ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:35:05 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:35:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:35:17 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.2ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:35:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:39:13 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (18.5ms)
+Completed 200 OK in 169ms (Views: 148.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:39:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:46:39 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (2.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (16.2ms)
+Completed 200 OK in 188ms (Views: 173.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/mystyle.css" for 127.0.0.1 at 2018-10-24 18:46:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/mystyle.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:47:03 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (37.9ms)
+Completed 200 OK in 131ms (Views: 126.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:47:04 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.0ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:52:04 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (17.2ms)
+Completed 200 OK in 147ms (Views: 134.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:52:55 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.8ms)
+Completed 200 OK in 79ms (Views: 71.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:57:13 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.4ms)
+Completed 200 OK in 81ms (Views: 75.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:57:23 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.2ms)
+Completed 200 OK in 86ms (Views: 80.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 18:58:18 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.7ms)
+Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:06:33 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 56.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:06:34 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.9ms)
+Completed 200 OK in 50ms (Views: 46.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:07:02 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.8ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:09:04 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:09:06 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:09:25 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:09:52 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:10:02 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:11:18 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:11:53 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.1ms)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:12:09 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:12:31 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.6ms)
+Completed 200 OK in 55ms (Views: 50.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:18:11 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 58ms (Views: 54.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:18:24 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:18:30 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:18:36 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 51.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 19:18:40 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (43.9ms)
+Completed 200 OK in 85ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 19:19:15 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:19:17 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:19:45 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.7ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:19:52 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.9ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:19:58 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:20:56 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.2ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:22:00 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:22:15 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:22:42 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:23:12 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:23:42 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.7ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:24:19 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 56.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:24:43 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:24:55 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:26:13 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 19:26:21 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (4.7ms)
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:26:57 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 54ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:27:18 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.0ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:27:51 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 19:27:57 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (2.7ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 19:32:09 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (3.8ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:32:11 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.6ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:32:12 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.5ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:34:06 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 19:34:41 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+

@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+ h1 {
+   font-family: 'Erica One', cursive;
+   color: gold;
+   text-shadow: 3px 4px tomato;
+ }
+
+body {
+  background-color: steelblue;
+  vertical-align: middle;
+}
+
+a {
+  background-color: orange;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+a:hover, a:active {
+    background-color: darkorange;
+    color: white;
+    text-decoration: none;
+}
+
+input{
+  background-color: white;
+  color: dodgerblue;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+input:hover{
+  background-color: lightsteelblue;
+}
