@@ -1,12 +1,14 @@
 class RoundsController < ApplicationController
   def show
     #byebug
+    byebug
     @round = Round.find(params[:id])
     #redirect_to round_path(@round)
 
   end
 
   def create
+
     @round = Round.new
     @round.game_id = params[:game_id]
 
