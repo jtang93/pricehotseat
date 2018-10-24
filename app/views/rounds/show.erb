@@ -4,8 +4,8 @@
 <% @round.players.each do |player| %>
   <p>
   <%= player.name %><br>
-  <% c = player.choices.find{|c| c.round_id == @round.id} %>
-  Amt: <%= c.guess_ammount %>
+  <% tmp_choice = player.choices.find{|c| c.round_id == @round.id} %>
+  Amt: <%= tmp_choice.guess_ammount %>
   </p>
 <% end %>
 
@@ -17,19 +17,20 @@
   <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.item.price %>
     <% if !!winner %>
       <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount > winner.choices.find{|c| c.round_id == @round.id}.guess_ammount %>
-        <% winner = player.name %>
+        <% winner = player %>
       <% end %>
     <% else %>
-      <% winner = player.name %>
+      <% winner = player %>
     <% end %>
-  <% else %>
-    <% winner = "There was no winner this round." %>
   <% end %>
 <% end %>
 
-<h1>Winner: <%= winner %></h1>
+<h1>Winner: <%= if !!winner then winner.name else 'No Winner This Round' end%></h1>
 
 <br>
 
-
-<%= button_to "Next Round", rounds_path({game_id: @round.game_id}) %>
+<% if @round.game.rounds.size < @round.game.num_rounds %>
+  <%= button_to "Next Round", rounds_path({game_id: @round.game_id}) %>
+<% else %>
+  <%= button_to "Final Screen", final_game_path(@round.game) %>
+<% end %>
