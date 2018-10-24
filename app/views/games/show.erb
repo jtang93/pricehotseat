@@ -14,13 +14,9 @@
 
   <h3>Add New Player:</h3>
   <%= form_for @player do |f| %>
+    <%= f.hidden_field :room_code, :value => @game.room_code %>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
-
-    <% @player.room_code = @game.room_code %>
-    <%= f.label :room_code %><br>
-    <%= f.text_field :room_code %><br>
-
     <%= f.submit %>
   <% end %>
 
@@ -46,31 +42,23 @@
   <% @game.players.each do |player| %>
     <div>
       <h4> <%= player.name %> </h4>
-      <% if player.choices.find {|c| c.round_id == @round.id} %>
-        <% c = player.choices.find {|c| c.round_id == @round.id} %>
-        <p>Guess Ammount: <%= c.guess_ammount %> </p>
+      <% if choice = player.choice_for(@round) %>
+        <p>Guess Ammount: <%= choice.guess_ammount %> </p>
       <% else %>
-
         <% choice = Choice.new %>
         <%= form_for choice do |f| %>
           <%= f.hidden_field :player_id, :value => player.id %>
-          <%= f.hidden_field :round_id, :value => @game.rounds.last.id %>
-
+          <%= f.hidden_field :round_id, :value => @round.id %>
           <%= f.label "Guess Amount" %>
           <%= f.number_field :guess_ammount %>
-
           <%= f.submit %>
         <% end %>
-
       <% end %>
-
     </div>
-
   <% end %>
 
-  <% if @game.players.map{|player| player.choices.find{|choice| choice.round_id == @round.id}}.select{|choice| !choice.nil?}.size == @game.players.size %>
+  <% if @game.all_players_choices_are_in %>
     <%= button_to "Show Results", round_path(id: @round.id) %>
   <% end %>
-
 
 <% end %>

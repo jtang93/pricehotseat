@@ -1,11 +1,7 @@
 class ChoicesController < ApplicationController
   def create
     @choice = Choice.create(choice_params)
-
-    round = Round.find(@choice.round_id)
-
-    flash[:round_id] = round.id
-    redirect_to game_path(round.game_id)
+    redirect_to game_path(@choice.round.game) # REFACTOR, using more resful
   end
 
   private
