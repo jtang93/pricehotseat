@@ -17,15 +17,17 @@
   <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.items.first.price %>
     <% if !!winner %>
       <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount > winner.choices.find{|c| c.round_id == @round.id}.guess_ammount %>
-        <% winner = player %>
+        <% winner = player.name %>
       <% end %>
     <% else %>
-      <% winner = player %>
+      <% winner = player.name %>
     <% end %>
+  <% else %>
+    <% winner = "There was no winner this round." %>
   <% end %>
 <% end %>
 
-<h1>Winner: <%= winner.name %></h1>
+<h1>Winner: <%= winner %></h1>
 
 <br>
 
