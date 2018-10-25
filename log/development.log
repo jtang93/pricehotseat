@@ -16542,3 +16542,457 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 55ms (Views: 51.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 20:11:39 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (28.0ms)
+Completed 200 OK in 572ms (Views: 534.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-24 20:11:40 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (2.8ms)
+Completed 200 OK in 72ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-10-24 20:11:48 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"to6N2IPbHD5Xi0Ucl88osxMaKwNtC0mn+WBgSt4zZhYrHWHWRG0cbZ2olDA/5qnvG5cHwi8kwytvC4Y3TS4wOA==", "game"=>{"name"=>"g1", "num_rounds"=>"2234234234"}, "commit"=>"Create Game"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:28
+  [1m[36mGame Create (1.8ms)[0m  [1m[32mINSERT INTO "games" ("name", "created_at", "updated_at", "num_rounds") VALUES (?, ?, ?, ?)[0m  [["name", "g1"], ["created_at", "2018-10-25 00:11:48.315777"], ["updated_at", "2018-10-25 00:11:48.315777"], ["num_rounds", 2234234234]]
+  ↳ app/controllers/games_controller.rb:28
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:31
+  [1m[36mGame Update (0.8ms)[0m  [1m[33mUPDATE "games" SET "room_code" = ?, "updated_at" = ?, "started" = ? WHERE "games"."id" = ?[0m  [["room_code", "BXCG"], ["updated_at", "2018-10-25 00:11:48.323407"], ["started", 0], ["id", 2]]
+  ↳ app/controllers/games_controller.rb:31
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:31
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 22ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:11:48 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (1.4ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (1.7ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (11.0ms)
+Completed 200 OK in 140ms (Views: 40.7ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2018-10-24 20:11:54 -0400
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V1gFN/HXMNWXPgwASXwVWb5Jmb+Kl0ADxO9wdToeC4/Ky+k5NmEwhl0d3SzhVZQFtsS1fsi4yo9ShJYIqQNdoQ==", "player"=>{"name"=>"JT", "room_code"=>"BXCG"}, "commit"=>"Create Player"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."room_code" = ? LIMIT ?[0m  [["room_code", "BXCG"], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mPlayer Create (1.8ms)[0m  [1m[32mINSERT INTO "players" ("name", "game_id", "created_at", "updated_at", "room_code") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JT"], ["game_id", 2], ["created_at", "2018-10-25 00:11:54.093048"], ["updated_at", "2018-10-25 00:11:54.093048"], ["room_code", "BXCG"]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 22ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:11:54 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (6.5ms)
+Completed 200 OK in 64ms (Views: 55.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2018-10-24 20:11:56 -0400
+Processing by PlayersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SepLA8catgcCrQmJVcC2isRmxBj6UJtpnvqPdn+QjD7UeacNAKy2VMiO2KX96TfWzOvo2bh/EeUIkWkL7I3aEA==", "player"=>{"name"=>"Max", "room_code"=>"BXCG"}, "commit"=>"Create Player"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."room_code" = ? LIMIT ?[0m  [["room_code", "BXCG"], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[36mPlayer Create (0.8ms)[0m  [1m[32mINSERT INTO "players" ("name", "game_id", "created_at", "updated_at", "room_code") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Max"], ["game_id", 2], ["created_at", "2018-10-25 00:11:56.897908"], ["updated_at", "2018-10-25 00:11:56.897908"], ["room_code", "BXCG"]]
+  ↳ app/controllers/players_controller.rb:8
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/players_controller.rb:8
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:11:56 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:9
+  Rendered games/show.erb within layouts/application (6.6ms)
+Completed 200 OK in 62ms (Views: 53.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/rounds?game_id=2" for 127.0.0.1 at 2018-10-24 20:11:59 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"bRmP1gD+oNFyaE8ztBpQHsDmJ/qpy0htihVQZfg9qLnwimPYx0iggrhLnh8cM9FCyGsLO+vkwuEcfrYYayD+lw==", "game_id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mRound Create (0.4ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 2]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:17
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRoundItem Create (1.6ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 4], ["item_id", 11], ["created_at", "2018-10-25 00:11:59.267741"], ["updated_at", "2018-10-25 00:11:59.267741"]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:25
+  [1m[36mGame Update (0.8ms)[0m  [1m[33mUPDATE "games" SET "started" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["started", 1], ["updated_at", "2018-10-25 00:11:59.278782"], ["id", 2]]
+  ↳ app/controllers/rounds_controller.rb:25
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:25
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 93ms (ActiveRecord: 21.1ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:11:59 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (1.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 23]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 24]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (54.6ms)
+Completed 200 OK in 103ms (Views: 92.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 20:12:21 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zI3GGEpYi0amJQMimxJRmc6okr7D/CGgRFS57DtDLNxRHioWje6LFWwG0g4zO9DFxiW+f4HTqyzSP1+RqF568g==", "choice"=>{"player_id"=>"23", "round_id"=>"4", "guess_ammount"=>"456456"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (6.5ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 4], ["player_id", 23], ["guess_ammount", 456456]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (3.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 38ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:12:21 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 23]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 24]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (15.7ms)
+Completed 200 OK in 82ms (Views: 58.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/choices" for 127.0.0.1 at 2018-10-24 20:12:26 -0400
+Processing by ChoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Szo5MoyqFRKz3AcEFQp5nP8mRHWdIqSwCS5jIdMvc7rWqdU8SxwVQXn/1ii9I/jA96totN8NLjyfRYVcQDIllA==", "choice"=>{"player_id"=>"24", "round_id"=>"4", "guess_ammount"=>"34563456"}, "commit"=>"Create Choice"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mChoice Create (0.4ms)[0m  [1m[32mINSERT INTO "choices" ("round_id", "player_id", "guess_ammount") VALUES (?, ?, ?)[0m  [["round_id", 4], ["player_id", 24], ["guess_ammount", 34563456]]
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/choices_controller.rb:3
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/choices_controller.rb:5
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 12ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:12:26 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 23]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 24]]
+  ↳ app/views/games/show.erb:49
+  Rendered games/show.erb within layouts/application (10.3ms)
+Completed 200 OK in 84ms (Views: 72.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/round?id=4" for 127.0.0.1 at 2018-10-24 20:12:28 -0400
+Processing by RoundsController#show as HTML
+  Parameters: {"authenticity_token"=>"9N1XSsP1uigrd0BydCvj8rHsmCzF/aVe0IBM7ybFF9lpTrtEBEO6e+FUkV7cAmKuuWG07YfSL9JG66qStdhB9w==", "id"=>"4"}
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:4
+  Rendering rounds/show.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/rounds/show.erb:1
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT "players".* FROM "players" INNER JOIN "choices" ON "players"."id" = "choices"."player_id" WHERE "choices"."round_id" = ?[0m  [["round_id", 4]]
+  ↳ app/views/rounds/show.erb:4
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 23]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 24]]
+  ↳ app/views/rounds/show.erb:7
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 4], ["LIMIT", 1]]
+  ↳ app/views/rounds/show.erb:12
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/rounds/show.erb:32
+  Rendered rounds/show.erb within layouts/application (19.8ms)
+Completed 200 OK in 75ms (Views: 63.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/rounds?game_id=2" for 127.0.0.1 at 2018-10-24 20:12:34 -0400
+Processing by RoundsController#create as HTML
+  Parameters: {"authenticity_token"=>"IrQLy48cOaCj6wHJpeUuvftlRkbdfu3dp5sQpzKzEQ+/J+fFSKo582nI0OUNzK/h8+hqh59RZ1Ex8Pbaoa5HIQ==", "game_id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mRound Create (0.5ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id") VALUES (?)[0m  [["game_id", 2]]
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/rounds_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRound Load (0.1ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mRoundItem Create (0.5ms)[0m  [1m[32mINSERT INTO "round_items" ("round_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["round_id", 5], ["item_id", 13], ["created_at", "2018-10-25 00:12:34.728359"], ["updated_at", "2018-10-25 00:12:34.728359"]]
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rounds_controller.rb:18
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rounds_controller.rb:21
+Redirected to http://localhost:3000/games/2
+Completed 302 Found in 24ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/games/2" for 127.0.0.1 at 2018-10-24 20:12:34 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:9
+  Rendering games/show.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:35
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "round_items" ON "items"."id" = "round_items"."item_id" WHERE "round_items"."round_id" = ? LIMIT ?[0m  [["round_id", 5], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:40
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/games/show.erb:46
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 23]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."player_id" = ?[0m  [["player_id", 24]]
+  ↳ app/views/games/show.erb:49
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ? ORDER BY "rounds"."id" DESC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/show.erb:57
+  Rendered games/show.erb within layouts/application (13.6ms)
+Completed 200 OK in 56ms (Views: 48.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/games/" for 127.0.0.1 at 2018-10-24 20:12:38 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.2ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 20:12:39 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (4.2ms)
+Completed 200 OK in 62ms (Views: 56.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/games/1" for 127.0.0.1 at 2018-10-24 20:12:41 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Mn1wZOCey7zPDAYNd7fq7ps6pFbE+ApfD7itHBIIy3+v7pxqJyjL7wUv1yHfnmuyk7eIl4bXgNOZ00thgRWdUQ==", "id"=>"1"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.6ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+Redirected to http://localhost:3000/games
+Completed 302 Found in 17ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 20:12:41 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/games/2" for 127.0.0.1 at 2018-10-24 20:12:42 -0400
+Processing by GamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4apQT+yo26JDtCbijuwlXzVFbeZ1ODPcJWMQEhbAaEh8ObxBKx7b8YmX984mxaQDPchBJzcXuVCzCPZvhd0+Zg==", "id"=>"2"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.5ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 23]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mPlayer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 24]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mRound Destroy (0.1ms)[0m  [1m[31mDELETE FROM "rounds" WHERE "rounds"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/games_controller.rb:42
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/games_controller.rb:42
+Redirected to http://localhost:3000/games
+Completed 302 Found in 17ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-24 20:12:42 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (1.8ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-25 09:26:09 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (7.5ms)
+Completed 200 OK in 447ms (Views: 408.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-10-25 09:26:10 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.erb within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.erb:3
+  Rendered games/index.erb within layouts/application (2.1ms)
+Completed 200 OK in 82ms (Views: 75.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-10-25 09:26:15 -0400
+Processing by GamesController#new as HTML
+  Rendering games/new.erb within layouts/application
+  Rendered games/new.erb within layouts/application (28.8ms)
+Completed 200 OK in 82ms (Views: 64.6ms | ActiveRecord: 0.5ms)
+
+
