@@ -29,4 +29,9 @@ class RoundsController < ApplicationController
 
     redirect_to game_path(@round.game_id)
   end
+
+  def destroy
+    @round = Round.find(params[:id])
+    @round.delete
+  end
 end

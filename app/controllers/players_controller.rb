@@ -9,6 +9,11 @@ class PlayersController < ApplicationController
     redirect_to game_path(@player.game_id)
   end
 
+  def destroy
+    @player = Player.find(params[:id])
+    @player.delete
+  end
+
   private
 
   def player_params

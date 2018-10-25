@@ -1,8 +1,8 @@
 class Round < ApplicationRecord
   belongs_to :game
-  has_many :choices
+  has_many :choices, dependent: :destroy
   has_many :players, :through => :choices
-  has_one :round_item
+  has_one :round_item, dependent: :destroy
   has_one :item, :through => :round_item
 
   def get_winner
