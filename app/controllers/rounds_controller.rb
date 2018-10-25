@@ -1,10 +1,5 @@
 class RoundsController < ApplicationController
   def show
-<<<<<<< HEAD
-    #byebug
-    byebug
-=======
->>>>>>> 9ac82870c11f62a1d3dda75e2721217dd4c1613c
     @round = Round.find(params[:id])
     @round.winner = @round.find_winner.id
     @round.save
