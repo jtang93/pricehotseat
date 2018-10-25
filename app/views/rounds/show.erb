@@ -4,28 +4,15 @@
 <% @round.players.each do |player| %>
   <p>
   <%= player.name %><br>
-  <% tmp_choice = player.choices.find{|c| c.round_id == @round.id} %>
-  Amt: <%= tmp_choice.guess_ammount %>
+  Amt: <%= player.choice_for(@round).guess_ammount %>
   </p>
 <% end %>
 
 <h3>The Item Price Was <%=@round.item.price%></h3>
 
 <br>
-<% winner = nil %>
-<% @round.players.each do |player| %>
-  <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.item.price %>
-    <% if !!winner %>
-      <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount > winner.choices.find{|c| c.round_id == @round.id}.guess_ammount %>
-        <% winner = player %>
-      <% end %>
-    <% else %>
-      <% winner = player %>
-    <% end %>
-  <% end %>
-<% end %>
 
-<h1>Winner: <%= if !!winner then winner.name else 'No Winner This Round' end%></h1>
+<h1>Winner: <%= if !!@round.get_winner then @round.get_winner.name else 'No Winner This Round' end%></h1>
 
 <br>
 
