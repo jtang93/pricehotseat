@@ -21,6 +21,10 @@ class GamesController < ApplicationController
     render 'final'
   end
 
+  def welcome
+    render 'welcome'
+  end
+
   def new
     @game = Game.new
   end
