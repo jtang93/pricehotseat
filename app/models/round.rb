@@ -6,7 +6,11 @@ class Round < ApplicationRecord
   has_one :item, :through => :round_item
 
   def get_winner
-    Player.find(self.winner)
+    if self.winner
+      Player.find(self.winner)
+    else
+      nil
+    end
   end
 
   def find_winner
@@ -20,6 +24,10 @@ class Round < ApplicationRecord
         end
       end
     end
-    winner
+    if !!winner
+      winner
+    else
+      nil
+    end
   end
 end

@@ -1,7 +1,11 @@
 class RoundsController < ApplicationController
   def show
     @round = Round.find(params[:id])
-    @round.winner = @round.find_winner.id
+    if tmp_winner = @round.find_winner
+      @round.winner = tmp_winner.id
+    else
+      @round.winner = nil
+    end
     @round.save
   end
 

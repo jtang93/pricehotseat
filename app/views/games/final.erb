@@ -1,6 +1,11 @@
 <h1>Final Screen</h1>
 <% count = 1 %>
 <% @game.rounds.each do |round| %>
-  <%= "Round #{count}: #{round.find_winner.name}" %><br>
+  <% if tmp_winner = round.find_winner %>
+    <%= "Round #{count}: #{tmp_winner.name}" %><br>
+  <% else %>
+    <%= "Round #{count}: No Winner This Round" %><br>
+  <% end %>
   <% count += 1 %>
+
 <% end %>
