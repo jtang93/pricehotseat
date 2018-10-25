@@ -1,11 +1,22 @@
+<div class="splash">
+  <div class="title">
+
+    <span>PRICE</span><br>
+    <span>HOT</span><br>
+    <span>SEAT</span>
+  </div>
+</div>
+
+<div class="index">
 <h1>All Games</h1>
 
 <% @games.each do |game| %>
-  <hr>
+
   <%= link_to "#{game.name} | #{game.room_code}", game %><br></br>
-  <%= button_to "delete", game_path(game), method: :delete %>
+  <%= button_to "delete", game_path(game), method: :delete, class: "delete" %>
 <% end %>
 
-<hr>
 
-<%= button_to "New Game", new_game_path, method: :get %>
+
+<%= button_to "New Game", new_game_path, method: :get, class: "new_game" %>
+</div>
