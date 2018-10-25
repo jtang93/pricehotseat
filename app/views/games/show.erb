@@ -21,9 +21,9 @@
   <% end %>
 
   <hr>
-
-  <%= button_to "Start Game", rounds_path({game_id: @game.id}) %>
-
+  <% if !@game.players.empty? %>
+    <%= button_to "Start Game", rounds_path({game_id: @game.id}) %>
+  <% end %>
 <% else %>
 
   <hr>
