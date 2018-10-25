@@ -14,20 +14,17 @@
  *= require_self
  */
  h1 {
-   font-family: 'Erica One', cursive;
-   font-size: 30;
-   color: gold;
-   -webkit-text-stroke-width: 2px;
-   -webkit-text-stroke-color: black;
+
    /* text-shadow: 3px 4px darkorange; */
  }
 
 html, body {
-  background-image: linear-gradient(135deg, #01cdff, darkblue);
+  background-image: linear-gradient(180deg, #01cdff, darkblue);
   vertical-align: middle;
   height: 100%;
   margin: 0;
 }
+
 
 a {
   background-color: orange;
@@ -46,15 +43,71 @@ a:hover, a:active {
 }
 
 input{
-  background-color: white;
-  color: dodgerblue;
-  padding: 6px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border-radius: 8px;
+  border: none;
 }
 
-input:hover{
+.submit{
+  background-color: white;
+  color: dodgerblue;
+  padding: 6px 10px;
+
+}
+
+.submit:hover{
   background-color: lightsteelblue;
+}
+
+.delete{
+  background-color: crimson;
+}
+
+.delete:hover{
+  background-color: firebrick;
+}
+
+.new_game{
+
+}
+
+.splash{
+  -webkit-animation: colorchange 5s infinite;
+  background-image: linear-gradient(135deg, orange, red);
+  float: left;
+  width: 50%;
+  height: 100%;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: center; */
+
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+   {
+     0%   {background: orange;}
+     60%  {background: red;}
+     100% {background: orange;}
+   }
+
+span{
+  font-size: 100px;
+  font-family: 'Erica One', cursive;
+
+  color: gold;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+
+}
+
+.title{
+
+}
+
+.index{
+  float: right;
+  width: 50%;
+  height: 100%;
 }
