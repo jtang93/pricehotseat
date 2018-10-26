@@ -322,11 +322,12 @@ img {
 
 @-webkit-keyframes floatBubble {
     0% {
-        top:500px;
+      top:500px;
     }
     50% {
       top:0px;
     }
     100% {
-        top:500px;
+      top:500px;
     }
+}
