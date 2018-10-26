@@ -18,9 +18,16 @@
   </div>
 
   <div>
-<h1 class="winner">The Winner Is... [waiting for max's code]</h1>
+  <% op = @game.players.order(wins: :desc) %>
+  <% if op[0].wins == op[1].wins %>
+    <% win_text = "A Tie" %>
+  <% else %>
+    <% win_text = op[0].name %>
+  <% end %>
 
-<p><img src="https://us-east-1.tchyn.io/snopes-production/uploads/2017/07/bob_barker_fb.jpg?resize=865,452" class="w3-spin w3-jumbo"></p>
+<h1 class="winner">The Winner Is... <%= win_text %></h1>
+
+<!-- <p><img src="https://us-east-1.tchyn.io/snopes-production/uploads/2017/07/bob_barker_fb.jpg?resize=865,452" class="w3-spin w3-jumbo"></p> -->
   </div>
 
   <div>
