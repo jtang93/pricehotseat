@@ -1,7 +1,16 @@
 class ChoicesController < ApplicationController
   def create
-    @choice = Choice.create(choice_params)
-    redirect_to game_path(@choice.round.game) # REFACTOR, using more resful
+    #byebug
+    if Round.find(params[:choice][:round_id]).choices.map{|c| c.guess_ammount}.include?(params[:choice][:guess_ammount].to_i)
+      flash[:error] = 'Must Enter Unique Amount'
+      redirect_to game_path(Round.find(params[:choice][:round_id]).game)
+    elsif params[:choice][:guess_ammount].to_i <= 0
+      flash[:error] = 'Must Enter Amount Above Zero'
+      redirect_to game_path(Round.find(params[:choice][:round_id]).game)
+    else
+      @choice = Choice.create(choice_params)
+      redirect_to game_path(@choice.round.game) # REFACTOR, using more resful
+    end
   end
 
   private

@@ -7,5 +7,16 @@
     <%= "Round #{count}: No Winner This Round" %><br>
   <% end %>
   <% count += 1 %>
+<% end %>
 
+<% op = @game.players.order(wins: :desc) %>
+<% op.each do |o| %>
+  <%= "#{o.name} | #{o.wins}" %><br>
+<% end %>
+
+
+<% if op[0] == op[1] %>
+  <%= "A Tie" %>
+<% else %>
+  <%= op[0].name %>
 <% end %>
