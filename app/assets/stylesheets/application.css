@@ -22,6 +22,10 @@ h4{
   color: white;
 }
 
+h2 {
+  margin-top: 0;
+}
+
 html{
   height: 100%;
   margin: 0px;
@@ -31,13 +35,10 @@ html{
 
  div{
    display: flex;
-
-
    flex-direction: column;
    justify-content: center;
    align-content: center;
    text-align: center;
-
  }
 
  h1 {
@@ -169,6 +170,7 @@ span{
   /* flex-direction: column;
 
   align-content: center; */
+  display: flex;
   padding-left: 25px;
   padding-right: 25px;
   justify-content: left;
@@ -182,21 +184,29 @@ span{
 }
 
 .item_container{
+  /* flex-grow: 1; */
+  margin: 10px;
+}
+
+.item_div{
   background-color: white;
   border-radius: 20px;
   font-size: 24px;
+  padding: 10px
+  /* margin: auto; */
 }
 
 img {
   display: block;
-  max-width: 400px;
-  max-height: 250px;
+  max-width: 700px;
+  max-height: 400px;
   width: auto;
   height: auto;
 
   margin-left: auto;
   margin-right: auto;
-  width:50%
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .player_container{
@@ -204,9 +214,9 @@ img {
   float:left; */
   flex-direction: row;
   vertical-align: bottom;
-  margin-top: auto;
-  margin-bottom: 10px;
-
+  width: 100%;
+  align-self: flex-end;
+  bottom: 10px;
 }
 
 .player_div_red{
@@ -261,6 +271,7 @@ img {
 
 .winner{
   -webkit-animation: color-change 1s infinite;
+  font-size: 30px;
 }
 
 @-webkit-keyframes color-change {
@@ -271,4 +282,8 @@ img {
   68%  {color: purple;}
   85%  {color: red;}
   100% {color: orange;}
+}
+
+.input_field{
+  width: 90%
 }
