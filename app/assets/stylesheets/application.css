@@ -295,23 +295,6 @@ img {
   width: 90%
 }
 
-<<<<<<< HEAD
-#float {
-    position: relative;
-    -webkit-animation: floatBubble 1s infinite  normal ease-out;
-}
-@-webkit-keyframes floatBubble {
-    0% {
-        top:500px;
-    }
-    50% {
-      top:0px;
-    }
-    100% {
-        top:500px;
-    }
-=======
-
 .dropdown {
     position: relative;
     display: inline-block;
@@ -330,5 +313,20 @@ img {
 
 .dropdown:hover .dropdown-content {
     display: block;
->>>>>>> master
 }
+
+#float {
+    position: relative;
+    -webkit-animation: floatBubble 1s infinite  normal ease-out;
+}
+
+@-webkit-keyframes floatBubble {
+    0% {
+        top:500px;
+    }
+    50% {
+      top:0px;
+    }
+    100% {
+        top:500px;
+    }
