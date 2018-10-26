@@ -1,4 +1,10 @@
-<h1>Final Screen</h1>
+<div class="show">
+<div class=""
+  <div class="header">
+    <h1>Final Score</h1>
+  </div>
+
+  <div class="final_scores">
 <% count = 1 %>
 <% @game.rounds.each do |round| %>
   <% if tmp_winner = round.find_winner %>
@@ -7,16 +13,18 @@
     <%= "Round #{count}: No Winner This Round" %><br>
   <% end %>
   <% count += 1 %>
-<% end %>
 
-<% op = @game.players.order(wins: :desc) %>
-<% op.each do |o| %>
-  <%= "#{o.name} | #{o.wins}" %><br>
 <% end %>
+  </div>
 
+  <div>
+<h1 class="winner">The Winner Is... [waiting for max's code]</h1>
 
-<% if op[0] == op[1] %>
-  <%= "A Tie" %>
-<% else %>
-  <%= op[0].name %>
-<% end %>
+<p><img src="https://us-east-1.tchyn.io/snopes-production/uploads/2017/07/bob_barker_fb.jpg?resize=865,452" class="w3-spin w3-jumbo"></p>
+  </div>
+
+  <div>
+<%= button_to "Home Page", "/", method: :get, class: "small_button" %>
+</div>
+  </div>
+</div>

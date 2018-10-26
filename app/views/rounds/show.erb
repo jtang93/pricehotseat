@@ -1,23 +1,35 @@
-<h1>Round <%= @round.game.rounds.size %> Results</h1>
+<div class = "show">
+  <div class="game_info">
 
-<h2>Players:</h2>
-<% @round.players.each do |player| %>
-  <p>
-  <%= player.name %><br>
-  Amt: <%= player.choice_for(@round).guess_ammount %>
-  </p>
-<% end %>
+    <h1>Round <%= @round.game.rounds.size %> Results</h1>
+  </div>
 
-<h3>The Item Price Was <%=@round.item.price%></h3>
 
-<br>
+<div class="item_container">
+  <p><%= @round.item.name %></p>
+  <%= image_tag @round.item.img_url%>
+</div>
 
-<h1>Winner: <%= if !!@round.get_winner then @round.get_winner.name else 'No Winner This Round' end%></h1>
-
-<br>
-
+<div class="round_winner">
+  <h2>The Item Price Was... $<%=@round.item.price%></h3>
+  <h1>Winner: <%= if !!@round.get_winner then @round.get_winner.name else 'No Winner This Round' end%>!!</h1>
 <% if @round.game.rounds.size < @round.game.num_rounds %>
-  <%= button_to "Next Round", rounds_path({game_id: @round.game_id}) %>
+  <%= button_to "Next Round", rounds_path({game_id: @round.game_id}), class: "small_button" %>
 <% else %>
-  <%= button_to "Final Screen", final_game_path(@round.game) %>
+  <%= button_to "Final Screen", final_game_path(@round.game), class: "small_button" %>
 <% end %>
+</div>
+
+<% color_count = 0 %>
+<% my_colors = ['red', 'blue', 'green', 'yellow'] %>
+  <div class="player_container">
+    <% @round.players.each do |player| %>
+    <div class= "player_div_<%=my_colors[color_count]%>">
+      <h4><%= player.name %></h4>
+      Amt: $<%= player.choice_for(@round).guess_ammount %>
+      </div>
+      <% color_count += 1 %>
+    <% end %>
+
+  </div>
+</div>

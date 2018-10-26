@@ -1,22 +1,15 @@
-<div class="splash">
-  <div class="title">
-
-    <span>PRICE</span><br>
-    <span>HOT</span><br>
-    <span>SEAT</span>
-  </div>
-</div>
-
-<div class="index">
+<div class="show">
 <h1>All Games</h1>
-
+<%= button_to "New Game", new_game_path, method: :get, class: "big_button" %>
 <% @games.each do |game| %>
+<br>
+  <span><%= link_to "#{game.name} | #{game.room_code}", game, class: "med_button"%></span>
+  <%= button_to "Delete", game_path(game), method: :delete, class: "delete" %>
 
-  <%= link_to "#{game.name} | #{game.room_code}", game %><br></br>
-  <%= button_to "delete", game_path(game), method: :delete, class: "delete" %>
+  <!-- <%= button_tag do %>
+  <i class = "fa fa-trash"></i>
+  <% end %> -->
 <% end %>
 
 
-
-<%= button_to "New Game", new_game_path, method: :get, class: "new_game" %>
 </div>
