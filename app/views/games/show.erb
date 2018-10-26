@@ -24,10 +24,29 @@
     <% end %>
   <% end %>
 
+  <br>
+
+  <h5>Minimum: 2 Players <br>
+  Maximum: 4 Players</h5>
+
   <% if !@game.players.empty? %>
-    <div class="fancy_button_container"><%= button_to "Start Game", rounds_path({game_id: @game.id}), class: "med_button fancy_button" %></div>
+    <% if @game.players.size >= 2  %>
+      <div class="fancy_button_container"><%= button_to "Start Game", rounds_path({game_id: @game.id}), class: "med_button fancy_button" %></div>
+
+    <% end %>
   <% end %>
 <% else %>
+
+<div class="dropdown">
+  <span>Rules</span>
+  <div class="dropdown-content">
+    <p>
+      To Play:<br></br>
+      Enter a Guess for the Price of The Displayed Item.<br></br>
+      If Your Guess is Higher Than the Item's Price You Lose.<br></br>
+    </p>
+  </div>
+</div>
 
 
   <h3>Round <%= @game.rounds.size %></h3>
