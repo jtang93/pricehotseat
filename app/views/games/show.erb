@@ -20,7 +20,7 @@
       <%= f.hidden_field :room_code, :value => @game.room_code %>
       <%= f.text_field :name %>
       <%= f.submit 'Add Player', class: "small_button" %>
-      </div>
+
     <% end %>
   <% end %>
 
@@ -31,10 +31,10 @@
 
 
   <h3>Round <%= @game.rounds.size %></h3>
-
+</div>
 
 <div class="item_container">
-  <div>
+  <div class="item_div">
   <p><%= @round.item.name %></p>
   <%= image_tag @round.item.img_url%>
 </div>
@@ -54,8 +54,8 @@
           <%= f.hidden_field :player_id, :value => player.id %>
           <%= f.hidden_field :round_id, :value => @round.id %>
           <%= f.label "Guess Amount" %>
-          <%= f.number_field :guess_ammount %>
-          <%= f.submit %>
+          <%= f.number_field :guess_ammount, class: "input_field" %>
+          <%= f.submit "Guess", class: "small_button" %>
         <% end %>
       <% end %>
     </div>

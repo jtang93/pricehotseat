@@ -6,13 +6,16 @@
 
 
 <div class="item_container">
-  <p><%= @round.item.name %></p>
-  <%= image_tag @round.item.img_url%>
+  <div class="item_div">
+
+    <p><%= @round.item.name %></p>
+    <%= image_tag @round.item.img_url%>
+  </div>
 </div>
 
 <div class="round_winner">
   <h2>The Item Price Was... $<%=@round.item.price%></h3>
-  <h1>Winner: <%= if !!@round.get_winner then @round.get_winner.name else 'No Winner This Round' end%>!!</h1>
+  <p class="winner">Winner: <%= if !!@round.get_winner then @round.get_winner.name else 'No Winner This Round' end%>!!</p>
 <% if @round.game.rounds.size < @round.game.num_rounds %>
   <%= button_to "Next Round", rounds_path({game_id: @round.game_id}), class: "small_button" %>
 <% else %>
