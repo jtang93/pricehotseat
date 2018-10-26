@@ -8,6 +8,8 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     if @game.finished
       redirect_to final_game_path(@game)
+    elsif @game.all_players_choices_are_in
+      redirect_to "/round/#{@game.rounds.last.id}" #round_path(id: @game.rounds.last.id)
     else
       @round = @game.rounds.last
       @player = Player.new

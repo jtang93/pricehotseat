@@ -12,6 +12,8 @@ class Game < ApplicationRecord
 
   def all_players_choices_are_in
     #byebug
-    self.players.map{|player| player.choices.find{|choice| choice.round_id == self.rounds.last.id}}.select{|choice| !choice.nil?}.size == self.players.size
+    if self.players.exists? && self.players.first.choices.exists?
+      self.players.map{|player| player.choices.find{|choice| choice.round_id == self.rounds.last.id}}.select{|choice| !choice.nil?}.size == self.players.size
+    end
   end
 end
