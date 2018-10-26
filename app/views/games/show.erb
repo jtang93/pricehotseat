@@ -7,34 +7,31 @@
 
 <% if !@game.started %>
 
-  <hr>
 
   <h3>Players:</h3>
   <% @game.players.each do |player| %>
     <p><%= player.name %></p>
   <% end %>
 
-  <hr>
 
   <% if @game.players.size < 4 %>
     <h3>Add New Player:</h3>
     <%= form_for @player do |f| %>
       <%= f.hidden_field :room_code, :value => @game.room_code %>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %><br>
-      <%= f.submit %>
+      <%= f.text_field :name %>
+      <%= f.submit 'Add Player', class: "small_button" %>
+      </div>
     <% end %>
-    <hr>
   <% end %>
 
   <% if !@game.players.empty? %>
-    <%= button_to "Start Game", rounds_path({game_id: @game.id}) %>
+    <div class="fancy_button_container"><%= button_to "Start Game", rounds_path({game_id: @game.id}), class: "med_button fancy_button" %></div>
   <% end %>
 <% else %>
 
 
   <h3>Round <%= @game.rounds.size %></h3>
-</div>
+
 
 <div class="item_container">
   <div>
