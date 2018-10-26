@@ -5,6 +5,14 @@ class Round < ApplicationRecord
   has_one :round_item, dependent: :destroy
   has_one :item, :through => :round_item
 
+  def find_uniq_item
+    tmp_item = Item.all.sample
+    if self.game.rounds.map{|r| r.item == tmp_item}.include? true
+      tmp_item = find_uniq_item
+    end
+    tmp_item
+  end
+
   def get_winner
     if self.winner
       Player.find(self.winner)

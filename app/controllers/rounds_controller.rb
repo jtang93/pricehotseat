@@ -19,8 +19,14 @@ class RoundsController < ApplicationController
 
     ri = RoundItem.new
     ri.round_id = @round.id
-    ri.item_id = Item.all.sample.id
-    ri.save
+
+    if !@round.game.rounds.first.item
+      ri.item_id = Item.all.sample.id
+      ri.save
+    else
+      ri.item_id = @round.find_uniq_item.id
+      ri.save
+    end
 
     game = Game.find(@round.game_id)
 

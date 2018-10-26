@@ -3,7 +3,8 @@
 <%= button_to "New Game", new_game_path, method: :get, class: "big_button" %>
 
 <h2>Running Games</h2>
-<% @games.each do |game| %>
+<% r_games = @games.select{|game| !game.finished} %>
+<% r_games.each do |game| %>
 <br>
   <% if !game.finished %>
     <span><%= link_to "#{game.name} | #{game.room_code}", game, class: "med_button"%></span>
@@ -12,7 +13,8 @@
 <% end %>
 
 <h2>Finished Games</h2>
-<% @games.each do |game| %>
+<% f_games = @games.select{|game| game.finished}%>
+<% f_games.each do |game| %>
 <br>
   <% if game.finished %>
     <span><%= link_to "#{game.name} | #{game.room_code}", game, class: "med_button"%></span>
