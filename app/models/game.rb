@@ -1,6 +1,9 @@
 class Game < ApplicationRecord
   has_many :players, dependent: :destroy
   has_many :rounds, dependent: :destroy
+  validates :name, :num_rounds, presence: true
+  validates :num_rounds, numericality: { greater_than: 0 }
+
 
   def generate_room_code
     code = (0...4).map{(65+rand(26)).chr}.join

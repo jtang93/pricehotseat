@@ -33,11 +33,15 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(game_params)
-    @game.room_code = @game.generate_room_code
-    @game.started = false
-    @game.finished = false
-    @game.save
-    redirect_to game_path(@game)
+    if @game.valid?
+      @game.room_code = @game.generate_room_code
+      @game.started = false
+      @game.finished = false
+      @game.save
+      redirect_to game_path(@game)
+    else
+      redirect_to new_game_path
+    end
   end
 
   def update
