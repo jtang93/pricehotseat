@@ -3,6 +3,8 @@ class RoundsController < ApplicationController
     @round = Round.find(params[:id])
     if tmp_winner = @round.find_winner
       @round.winner = tmp_winner.id
+      tmp_winner.wins += 1
+      tmp_winner.save
     else
       @round.winner = nil
     end
