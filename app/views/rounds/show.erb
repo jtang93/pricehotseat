@@ -1,33 +1,38 @@
-<h1>Round <%= @round.game.rounds.size %> Results</h1>
+<div class = "show">
+  <div class="game_info">
 
-<h2>Players:</h2>
-<% @round.players.each do |player| %>
-  <p>
-  <%= player.name %><br>
-  <% c = player.choices.find{|c| c.round_id == @round.id} %>
-  Amt: <%= c.guess_ammount %>
-  </p>
+    <h1>Round <%= @round.game.rounds.size %> Results</h1>
+  </div>
+
+
+<div class="item_container">
+  <div class="item_div">
+
+    <p><%= @round.item.name %></p>
+    <%= image_tag @round.item.img_url%>
+  </div>
+</div>
+
+<div class="round_winner">
+  <h2>The Item Price Was... $<%=@round.item.price%></h3>
+  <p class="winner">Winner: <%= if !!@round.get_winner then @round.get_winner.name else 'No Winner This Round' end%>!!</p>
+<% if @round.game.rounds.size < @round.game.num_rounds %>
+  <%= button_to "Next Round", rounds_path({game_id: @round.game_id}), class: "small_button" %>
+<% else %>
+  <%= button_to "Final Screen", final_game_path(@round.game), class: "small_button" %>
 <% end %>
+</div>
 
-<h3>The Item Price Was <%=@round.items.first.price%></h3>
-
-<br>
-<% winner = nil %>
-<% @round.players.each do |player| %>
-  <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount <= @round.items.first.price %>
-    <% if !!winner %>
-      <% if player.choices.find{|c| c.round_id == @round.id}.guess_ammount > winner.choices.find{|c| c.round_id == @round.id}.guess_ammount %>
-        <% winner = player %>
-      <% end %>
-    <% else %>
-      <% winner = player %>
+<% color_count = 0 %>
+<% my_colors = ['red', 'blue', 'green', 'yellow'] %>
+  <div class="player_container">
+    <% @round.players.each do |player| %>
+    <div class= "player_div_<%=my_colors[color_count]%>">
+      <h4><%= player.name %></h4>
+      Amt: $<%= player.choice_for(@round).guess_ammount %>
+      </div>
+      <% color_count += 1 %>
     <% end %>
-  <% end %>
-<% end %>
 
-<h1>Winner: <%= winner.name %></h1>
-
-<br>
-
-
-<%= button_to "Next Round", rounds_path({game_id: @round.game_id}) %>
+  </div>
+</div>

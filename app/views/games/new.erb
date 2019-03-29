@@ -1,8 +1,15 @@
+<div class="show">
 <h1>Start New Game</h1>
 
+  <div class="form_container">
 <%= form_for @game do |f| %>
-  <%= f.label :name %>
+  <%= f.label "Game name:" %>
   <%= f.text_field :name %>
-
-  <%= f.submit %>
+  <br></br>
+  <%= f.label "Number of rounds:" %>
+  <%= f.number_field :num_rounds %>
+<br></br>
+  <%= f.submit "Create New Game", class: "small_button" %>
 <% end %>
+  </div>
+</div>

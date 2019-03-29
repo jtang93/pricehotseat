@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_152826) do
+ActiveRecord::Schema.define(version: 2018_10_24_222643) do
 
   create_table "choices", force: :cascade do |t|
     t.integer "round_id"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_10_23_152826) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "started"
+    t.integer "num_rounds"
+    t.boolean "finished"
   end
 
   create_table "items", force: :cascade do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_152826) do
   create_table "rounds", force: :cascade do |t|
     t.integer "game_id"
     t.integer "choice_id"
+    t.integer "winner"
   end
 
 end

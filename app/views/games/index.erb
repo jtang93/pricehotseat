@@ -1,11 +1,28 @@
+<div class="show">
 <h1>All Games</h1>
+<%= button_to "New Game", new_game_path, method: :get, class: "big_button" %>
 
-<% @games.each do |game| %>
-  <hr>
-  <%= link_to "#{game.name} | #{game.room_code}", game %><br></br>
-  <%= button_to "delete", game_path(game), method: :delete %>
+<h2>Running Games</h2>
+<% r_games = @games.select{|game| !game.finished} %>
+<% r_games.each do |game| %>
+<br>
+  <% if !game.finished %>
+    <span><%= link_to "#{game.name} | #{game.room_code}", game, class: "med_button"%></span>
+    <%= button_to "Delete", game_path(game), method: :delete, class: "delete" %>
+  <% end %>
 <% end %>
 
-<hr>
+<h2>Finished Games</h2>
+<% f_games = @games.select{|game| game.finished}%>
+<% f_games.each do |game| %>
+<br>
+  <% if game.finished %>
+    <span><%= link_to "#{game.name} | #{game.room_code}", game, class: "med_button"%></span>
+    <%= button_to "Delete", game_path(game), method: :delete, class: "delete" %>
+  <% end %>
+<% end %>
 
-<%= button_to "New Game", new_game_path, method: :get %>
+
+
+
+</div>
